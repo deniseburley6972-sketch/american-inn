@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="American Inn – Contact us or make a reservation. Petersburg, VA." />
+  <title>American Inn | Contact &amp; Book</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+  <!-- ===== NAVBAR ===== -->
+  <nav id="navbar" class="scrolled">
+    <div class="container">
+      <a href="index.html" class="nav-logo">American <span>Inn</span></a>
+      <button class="nav-toggle" aria-label="Toggle menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="rooms.html">Rooms</a></li>
+        <li><a href="amenities.html">Amenities</a></li>
+        <li><a href="events.html">Events</a></li>
+        <li><a href="contact.html">Contact</a></li>
+        <li><a href="contact.html" class="btn btn--primary">Book Now</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- ===== PAGE HERO ===== -->
+  <div class="page-hero">
+    <div class="container">
+      <p class="breadcrumb"><a href="index.html">Home</a> &rsaquo; Contact &amp; Book</p>
+      <h1>Contact &amp; Reservations</h1>
+    </div>
+  </div>
+
+  <!-- ===== CONTACT SECTION ===== -->
+  <section class="section">
+    <div class="container">
+      <div class="contact-grid">
+
+        <!-- Contact Info -->
+        <div class="contact-info">
+          <span class="section-label">Get In Touch</span>
+          <h2>We'd Love to Hear From You</h2>
+          <p>Whether you're ready to book a room, have a question, or want to plan a special event — our team is here to help 24 hours a day, 7 days a week.</p>
+
+          <div class="contact-detail">
+            <span class="icon">📍</span>
+            <div>
+              <strong>Address</strong><br>
+              1 Inn Drive, Petersburg, VA 23803
+            </div>
+          </div>
+          <div class="contact-detail">
+            <span class="icon">📞</span>
+            <div>
+              <strong>Phone</strong><br>
+              <a href="tel:+18045550100">(804) 555-0100</a>
+            </div>
+          </div>
+          <div class="contact-detail">
+            <span class="icon">✉️</span>
+            <div>
+              <strong>Reservations Email</strong><br>
+              <a href="mailto:reservations@americaninn.example">reservations@americaninn.example</a>
+            </div>
+          </div>
+          <div class="contact-detail">
+            <span class="icon">🕐</span>
+            <div>
+              <strong>Front Desk Hours</strong><br>
+              Open 24 Hours / 7 Days a Week
+            </div>
+          </div>
+          <div class="contact-detail">
+            <span class="icon">📄</span>
+            <div>
+              <strong>Brochure</strong><br>
+              <a href="assets/brochure.pdf" target="_blank">Download our PDF brochure</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Contact Form -->
+        <!-- ADMIN NOTE: Replace the action URL below with your Formspree endpoint.
+             Sign up at https://formspree.io, create a form, and paste the endpoint here.
+             Example: action="https://formspree.io/f/xpznqabc" -->
+        <div class="contact-form">
+          <h3 style="margin-bottom:1.5rem;color:#1b2a4a;">Reservation Request</h3>
+          <form id="contact-form"
+                action="https://formspree.io/f/REPLACE_WITH_YOUR_FORMSPREE_ID"
+                method="POST">
+
+            <div class="form-group">
+              <label for="name">Full Name *</label>
+              <input type="text" id="name" name="name" required placeholder="Jane Smith" />
+            </div>
+
+            <div class="form-group">
+              <label for="email">Email Address *</label>
+              <input type="email" id="email" name="email" required placeholder="jane@example.com" />
+            </div>
+
+            <div class="form-group">
+              <label for="phone">Phone Number</label>
+              <input type="tel" id="phone" name="phone" placeholder="(804) 555-0000" />
+            </div>
+
+            <div style="display:grid;grid-template-columns:1fr 1fr;gap:1rem;">
+              <div class="form-group">
+                <label for="checkin">Check-In Date *</label>
+                <input type="date" id="checkin" name="checkin" required />
+              </div>
+              <div class="form-group">
+                <label for="checkout">Check-Out Date *</label>
+                <input type="date" id="checkout" name="checkout" required />
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label for="room">Room Type</label>
+              <select id="room" name="room">
+                <option value="">-- Select a Room --</option>
+                <option value="standard-queen">Standard Queen – $99/night</option>
+                <option value="standard-king">Standard King – $109/night</option>
+                <option value="accessible-king">Accessible King – $109/night</option>
+                <option value="deluxe-double-queen">Deluxe Double Queen – $129/night</option>
+                <option value="junior-suite">Junior Suite – $159/night</option>
+                <option value="executive-suite">Executive Suite – $189/night</option>
+              </select>
+            </div>
+
+            <div class="form-group">
+              <label for="guests">Number of Guests</label>
+              <select id="guests" name="guests">
+                <option value="1">1 Guest</option>
+                <option value="2" selected>2 Guests</option>
+                <option value="3">3 Guests</option>
+                <option value="4">4 Guests</option>
+                <option value="5+">5+ Guests</option>
+              </select>
+            </div>
+
+            <div class="form-group">
+              <label for="message">Special Requests or Questions</label>
+              <textarea id="message" name="message" placeholder="Early check-in, pet-friendly room, anniversary setup…"></textarea>
+            </div>
+
+            <!-- Hidden field to route replies correctly -->
+            <input type="hidden" name="_replyto" value="reservations@americaninn.example" />
+            <input type="hidden" name="_subject" value="New Reservation Request – American Inn" />
+
+            <button type="submit" class="btn btn--primary" style="width:100%;font-size:1rem;padding:1rem;">
+              Send Reservation Request
+            </button>
+            <p style="font-size:.8rem;color:#6b7280;margin-top:.75rem;text-align:center;">
+              We'll confirm your reservation by email within 2 hours.
+            </p>
+          </form>
+        </div>
+
+      </div>
+
+      <!-- Map Placeholder -->
+      <div class="map-placeholder">
+        <div style="text-align:center;">
+          <div style="font-size:3rem;margin-bottom:.5rem;">🗺️</div>
+          <p>Interactive map coming soon — 1 Inn Drive, Petersburg, VA 23803</p>
+          <a href="https://maps.google.com/?q=Petersburg,VA" target="_blank" rel="noopener" style="color:#1b2a4a;font-weight:bold;margin-top:.5rem;display:inline-block;">View on Google Maps →</a>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ===== FOOTER ===== -->
+  <footer>
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-col">
+          <h4>American Inn</h4>
+          <p>Classic comfort and genuine hospitality in Petersburg, Virginia.</p>
+        </div>
+        <div class="footer-col">
+          <h4>Quick Links</h4>
+          <a href="rooms.html">Rooms &amp; Rates</a><br>
+          <a href="amenities.html">Amenities</a><br>
+          <a href="events.html">Events</a><br>
+          <a href="contact.html">Contact &amp; Book</a>
+        </div>
+        <div class="footer-col">
+          <h4>Contact</h4>
+          <p>📍 1 Inn Drive, Petersburg, VA 23803</p>
+          <p>📞 (804) 555-0100</p>
+          <p>✉️ <a href="mailto:reservations@americaninn.example">reservations@americaninn.example</a></p>
+        </div>
+        <div class="footer-col">
+          <h4>Download</h4>
+          <a href="assets/brochure.pdf">📄 Our Brochure (PDF)</a>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2026 American Inn. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="scripts.js"></script>
+</body>
+</html>
